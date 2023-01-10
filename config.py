@@ -1,11 +1,16 @@
+# using DotEnv for more secure development
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 # General bot settings
 
 #PRO FEATURE - browser you want the bot to run ex: ["Chrome"] or ["Firefox"]. Firefox is only supported in Pro feature
 browser = ["Chrome"]
 # Enter your Linkedin password and username below. Do not commit this file after entering these credentials.
 # Linkedin credentials
-email = ""
-password = ""
+email = os.getenv("EMAIL")
+password = os.getenv("PASSWORD")
 
 #PRO FEATURE - Optional! run browser in headless mode, no browser screen will be shown it will work in background.
 headless = False
@@ -19,32 +24,33 @@ chromeProfilePath = r""
 LinkedinBotProPasswrod = ""
 # location you want to search the jobs - ex : ["Poland", "Singapore", "New York City Metropolitan Area", "Monroe County"]
 # continent locations:["Europe", "Asia", "Australia", "NorthAmerica", "SouthAmerica", "Africa", "Australia"]
-location = ["Poland"]
+location = ["Europe", "Asia", "Australia", "Africa"]
 # keywords related with your job search
-keywords = ["frontend", "react", "typescript","javascript", "vue", "python", "programming", "blockchain"]
+keywords = ["nodejs", "backend" , "react", "javascript","frontend", "mongodb", "express"]
 #job experience Level - ex:  ["Internship", "Entry level" , "Associate" , "Mid-Senior level" , "Director" , "Executive"]
-experienceLevels = [ "Entry level" ]
+experienceLevels = [ "Entry level" ,"Mid-Senior level", "Internship"]
 #job posted date - ex: ["Any Time", "Past Month" , "Past Week" , "Past 24 hours"] - select only one
-datePosted = ["Past Week"]
+datePosted = ["Past 24 hours"]
 #job type - ex:  ["Full-time", "Part-time" , "Contract" , "Temporary", "Volunteer", "Intership", "Other"]
-jobType = ["Full-time", "Part-time" , "Contract"]
+jobType = ["Full-time", "Part-time" , "Contract", "Temporary"]
 #remote  - ex: ["On-site" , "Remote" , "Hybrid"]
-remote = ["On-site" , "Remote" , "Hybrid"]
+remote = ["Remote" , "Hybrid"]
 #salary - ex:["$40,000+", "$60,000+", "$80,000+", "$100,000+", "$120,000+", "$140,000+", "$160,000+", "$180,000+", "$200,000+" ] - select only one
-salary = [ "$80,000+"]
+salary = [ "$50,000+"]
 #sort - ex:["Recent"] or ["Relevent"] - select only one
-sort = ["Recent"]
+sort = ["Relevent"]
 #Blacklist companies you dont want to apply - ex: ["Apple","Google"]
 blacklistCompanies = []
 #Blaclist keywords in title - ex:["manager", ".Net"]
-blackListTitles = []
+blackListTitles = [".Net", "manager", "php", "ruby", "python", "wordpress", "blockchain", "Lead", "Go","angular","veu.js","typescript", "css", "designer","design",]
 #Follow companies after sucessfull application True - yes, False - no
 followCompanies = False
+
 #Below settings are for linkedin bot Pro, you can purchase monthly or yearly subscription to use them from me.
 #PRO FEAUTRE! - Output unaswered questions into a seperate text file
 outputSkippedQuestions = True
 #PRO FEATURE! - Use AI to fill and answer skipped questions
-useAiAutocomplete = False
+useAiAutocomplete = True
 #PRO FEATURE! - Only Apply these companies -  ex: ["Apple","Google"] -  leave empty for all companies 
 onlyApplyCompanies = []
 #PRO FEATURE! - Only Apply titles having these keywords -  ex:["web", "remote"] - leave empty for all companies 
@@ -74,7 +80,7 @@ messageToHiringManager = ""
 #PRO FEATURE! - List and output non Easy Apply jobs links
 listNonEasyApplyJobsUrl = False
 #PRO FEATURE! - Check yes or no to all checkbox questions (True - yes, False - no), leave empty if you dont want this option
-answerAllCheckboxes = ""
+answerAllCheckboxes = True
 #PRO FEAUTRE! - Output file type. Can be .txt or .csv (excel) 
 outputFileType = [".txt"]
 
@@ -119,4 +125,4 @@ HowDidYouHeard = "" #OPTIONAL
 ConsiderMeForFutureOffers = True #true = yes, false = no
 
  # Testing features
-displayWarnings = False
+displayWarnings = True
